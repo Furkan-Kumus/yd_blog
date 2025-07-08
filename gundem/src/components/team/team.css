@@ -54,3 +54,135 @@
   background-color: #1eb2a6;
   color: #fff;
 }
+
+/*----------calculator section------------*/
+.calculator-section {
+  padding: 50px 0;
+  background-color: #f8f8f8;
+}
+
+.calculator-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.calculator-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.calculator-title h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.calculator-title p {
+  color: #666;
+  font-size: 16px;
+}
+
+.calculator-content {
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.inputs-section, .results-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
+  flex: 1;
+}
+
+.inputs-section h3, .results-section h3 {
+  color: #1eb2a6;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #1eb2a6;
+  box-shadow: 0 0 0 3px rgba(30, 178, 166, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #999;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.result-value {
+  font-weight: 700;
+  color: #1eb2a6;
+  font-size: 16px;
+}
+
+.total-cost {
+  background-color: #1eb2a6;
+  color: #fff;
+  margin: 20px -30px -30px -30px;
+  padding: 20px 30px;
+  border-radius: 0 0 15px 15px;
+}
+
+.total-cost .result-label,
+.total-cost .result-value {
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .calculator-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .calculator-title h2 {
+    font-size: 24px;
+  }
+  
+  .inputs-section, .results-section {
+    padding: 20px;
+  }
+}

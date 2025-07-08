@@ -1,37 +1,41 @@
 import React, { useState } from "react"
-import { Link } from "react-router-dom"
 import Head from "./Head"
 import "./header.css"
 
 const Header = () => {
   const [click, setClick] = useState(false)
 
+  const handleNavClick = (path) => {
+    setClick(false)
+    window.location.hash = path
+  }
+
   return (
     <>
       <Head />
       <header>
         <nav className='flexSB'>
-          <ul className={click ? "mobile-nav" : "flexSB "} onClick={() => setClick(false)}>
-            <li>
-              <Link to='/'>Home</Link>
+          <ul className={click ? "mobile-nav" : "flexSB "}>
+            <li onClick={() => handleNavClick('/')}>
+              <span style={{cursor: 'pointer'}}>Home</span>
             </li>
-            <li>
-              <Link to='/courses'>All Courses</Link>
+            <li onClick={() => handleNavClick('/courses')}>
+              <span style={{cursor: 'pointer'}}>All Courses</span>
             </li>
-            <li>
-              <Link to='/about'>About</Link>
+            <li onClick={() => handleNavClick('/about')}>
+              <span style={{cursor: 'pointer'}}>About</span>
             </li>
-            <li>
-              <Link to='/team'>Team</Link>
+            <li onClick={() => handleNavClick('/team')}>
+              <span style={{cursor: 'pointer'}}>Team</span>
             </li>
-            <li>
-              <Link to='/pricing'>Pricing</Link>
+            <li onClick={() => handleNavClick('/pricing')}>
+              <span style={{cursor: 'pointer'}}>Pricing</span>
             </li>
-            <li>
-              <Link to='/journal'>Journal</Link>
+            <li onClick={() => handleNavClick('/journal')}>
+              <span style={{cursor: 'pointer'}}>Journal</span>
             </li>
-            <li>
-              <Link to='/contact'>Contact</Link>
+            <li onClick={() => handleNavClick('/contact')}>
+              <span style={{cursor: 'pointer'}}>Contact</span>
             </li>
           </ul>
           <div className='start'>

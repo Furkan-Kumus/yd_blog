@@ -17,8 +17,8 @@ const AboutCard = () => {
                 </div>
                 <div className='info-text'>
                   <h5>Adres</h5>
-                  <p> Antalya, Döşemealtı Türkiye</p>
-                  <p>Gündem Yapı Denetim</p>
+                  <p>Bahçeyaka Mah. 817 Sokak No:53C Değirmen Konakları C Blok Daire:2</p>
+                  <p> Döşemealtı / Antalya</p>
                 </div>
               </div>
               <div className='info-block'>
@@ -41,11 +41,6 @@ const AboutCard = () => {
                   <p>support@.com</p>
                 </div>
               </div>
-              <div className='contact-icons'>
-                <i className="fab fa-facebook-f icon" onClick={() => window.open('https://www.facebook.com', '_blank')} style={{ cursor: 'pointer' }}></i>
-                <i className="fab fa-instagram icon" onClick={() => window.open('https://www.instagram.com/', '_blank')} style={{ cursor: 'pointer' }}></i>
-                <i className="fab fa-whatsapp icon" onClick={() => window.open('https://wa.me/', '_blank')} style={{ cursor: 'pointer' }}></i>
-              </div>
             </div>
             <div className='right row'>
               <div className='maps-container'>
@@ -58,6 +53,11 @@ const AboutCard = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 />
+              </div>
+              <div className='contact-icons'>
+                <i className="fab fa-facebook-f icon" onClick={() => window.open('https://www.facebook.com', '_blank')} style={{ cursor: 'pointer' }}></i>
+                <i className="fab fa-instagram icon" onClick={() => window.open('https://www.instagram.com/', '_blank')} style={{ cursor: 'pointer' }}></i>
+                <i className="fab fa-whatsapp icon" onClick={() => window.open('https://wa.me/', '_blank')} style={{ cursor: 'pointer' }}></i>
               </div>
             </div>
           </div>

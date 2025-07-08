@@ -1,13 +1,13 @@
 import React from "react"
-import { useLocation } from "react-router-dom"
 
 const Back = ({ title }) => {
-  const location = useLocation()
+  // Hash'ten current path'i al
+  const currentPath = window.location.hash.replace('#/', '') || ''
 
   return (
     <>
       <section className='back'>
-        <h2>Home / {location.pathname.split("/")[1]}</h2>
+        <h2>Home / {currentPath}</h2>
         <h1>{title}</h1>
       </section>
       <div className='margin'></div>
