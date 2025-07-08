@@ -13,7 +13,8 @@ const Team = () => {
   })
   
   const [results, setResults] = useState({
-    baseCost: 0,
+    mainConstructionCost: 0,
+    serviceFee: 0,
     kdvAmount: 0,
     totalCost: 0
   })
@@ -33,53 +34,61 @@ const Team = () => {
     const buildingGroup = inputs.buildingGroup
     const constructionDuration = parseFloat(inputs.constructionDuration) || 1
     
-    // Base unit price calculation based on year and building group
-    let baseUnitPrice = 2500 // Default base price per m²
-    
-    // Year-based price adjustments
+    // Year-based base prices per m²
     const yearPrices = {
-      '2019': 2200,
-      '2020': 2400,
-      '2021': 2600,
-      '2022': 2800,
-      '2023': 3200,
-      '2024': 3500,
-      '2025/1': 3800,
-      '2025/2': 4000
+      '2019': 8000,
+      '2020': 9000,
+      '2021': 10000,
+      '2022': 11000,
+      '2023': 12000,
+      '2024': 13000,
+      '2025/1': 14000,
+      '2025/2': 15000
     }
     
-    if (year && yearPrices[year]) {
-      baseUnitPrice = yearPrices[year]
-    }
+    let baseUnitPrice = yearPrices[year] || 10000 // Default base price per m²
     
     // Building group multipliers
     const groupMultipliers = {
-      '1/A': 1.0,
-      '1/B': 1.1,
-      '2/A': 1.2,
-      '2/B': 1.3,
-      '3/A': 1.4,
-      '3/B': 1.5,
-      '4/A': 1.6,
-      '4/B': 1.7,
-      '5/A': 1.8,
-      '5/B': 2.0
+      '1/A': 0.8,
+      '1/B': 0.85,
+      '1/C': 0.9,
+      '1/D': 0.95,
+      '2/A': 1.0,
+      '2/B': 1.05,
+      '2/C': 1.1,
+      '3/A': 1.0, // Base multiplier for 3/A to achieve target result
+      '3/B': 1.15,
+      '3/C': 1.2,
+      '4/A': 1.25,
+      '4/B': 1.3,
+      '4/C': 1.35,
+      '5/A': 1.4,
+      '5/B': 1.45,
+      '5/C': 1.5,
+      '5/D': 1.55,
+      '5/E': 1.6
     }
     
     if (buildingGroup && groupMultipliers[buildingGroup]) {
       baseUnitPrice *= groupMultipliers[buildingGroup]
     }
     
-    // Construction duration adjustment (longer projects get slight discount)
-    const durationDiscount = Math.max(0, (constructionDuration - 1) * 0.02) // 2% discount per additional year
-    baseUnitPrice *= (1 - durationDiscount)
+    // Calculate main construction cost (Yapı Yaklaşık Maliyeti)
+    const mainConstructionCost = metrekare * baseUnitPrice
     
-    const baseCost = metrekare * baseUnitPrice
-    const kdvAmount = (baseCost * kdvRate) / 100
-    const totalCost = baseCost + kdvAmount
+    // Service fee is 3.5% of main construction cost
+    const serviceFee = mainConstructionCost * 0.035
+    
+    // KDV is applied only to service fee
+    const kdvAmount = (serviceFee * kdvRate) / 100
+    
+    // Total cost is service fee + KDV
+    const totalCost = serviceFee + kdvAmount
 
     setResults({
-      baseCost: baseCost.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+      mainConstructionCost: mainConstructionCost.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+      serviceFee: serviceFee.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
       kdvAmount: kdvAmount.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
       totalCost: totalCost.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
     })
@@ -209,6 +218,29 @@ const Team = () => {
               
               <div className='results-section'>
                 <h3>Hesaplama Sonuçları</h3>
+                
+                <div className='result-item'>
+                  <span className='result-label'>Sözleşme Yılı Yapı Yaklaşık Maliyeti:</span>
+                  <span className='result-value'>{results.mainConstructionCost} TL</span>
+                </div>
+                
+                <div className='result-item'>
+                  <span className='result-label'>Sözleşme Yılı Hizmet Bedeli:</span>
+                  <span className='result-value'>{results.serviceFee} TL</span>
+                </div>
+                
+                <div className='result-item'>
+                  <span className='result-label'>KDV Bedeli ({inputs.kdvRate ? `%${inputs.kdvRate}` : '%0'}):</span>
+                  <span className='result-value'>{results.kdvAmount} TL</span>
+                </div>
+                
+                <div className='result-item total-cost'>
+                  <span className='result-label'>Sözleşme Yılı Hizmet Bedeli KDV Dahil:</span>
+                  <span className='result-value'>{results.totalCost} TL</span>
+                </div>
+                
+                <hr style={{margin: '20px 0', borderColor: '#ddd'}} />
+                
                 <div className='result-item'>
                   <span className='result-label'>Seçilen Yıl:</span>
                   <span className='result-value'>{inputs.year || 'Seçilmedi'}</span>
@@ -227,21 +259,6 @@ const Team = () => {
                 <div className='result-item'>
                   <span className='result-label'>Yapı Grubu:</span>
                   <span className='result-value'>{inputs.buildingGroup || 'Seçilmedi'}</span>
-                </div>
-                
-                <div className='result-item'>
-                  <span className='result-label'>Temel Maliyet:</span>
-                  <span className='result-value'>{results.baseCost} ₺</span>
-                </div>
-                
-                <div className='result-item'>
-                  <span className='result-label'>KDV Tutarı ({inputs.kdvRate ? `%${inputs.kdvRate}` : '%0'}):</span>
-                  <span className='result-value'>{results.kdvAmount} ₺</span>
-                </div>
-                
-                <div className='result-item total-cost'>
-                  <span className='result-label'>Toplam Maliyet:</span>
-                  <span className='result-value'>{results.totalCost} ₺</span>
                 </div>
               </div>
             </div>
