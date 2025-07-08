@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/yd_blog/static/css/main.97811fe6.css",
+    "main.js": "/yd_blog/static/js/main.c7ec8eb4.js",
+    "static/media/back.webp": "/yd_blog/static/media/back.93d3f802b480eeabae07.webp",
+    "static/media/awrapper.webp": "/yd_blog/static/media/awrapper.031ce77a398171427673.webp",
+    "static/media/bg.webp": "/yd_blog/static/media/bg.baa1024a4ae092566a75.webp",
+    "index.html": "/yd_blog/index.html",
+    "main.97811fe6.css.map": "/yd_blog/static/css/main.97811fe6.css.map",
+    "main.c7ec8eb4.js.map": "/yd_blog/static/js/main.c7ec8eb4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97811fe6.css",
+    "static/js/main.c7ec8eb4.js"
+  ]
+}
