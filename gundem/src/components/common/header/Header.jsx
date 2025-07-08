@@ -26,7 +26,7 @@ const Header = () => {
               <span style={{cursor: 'pointer'}}>About</span>
             </li>
             <li onClick={() => handleNavClick('/team')}>
-              <span style={{cursor: 'pointer'}}>Team</span>
+              <span style={{cursor: 'pointer'}}>Yapı Hesap</span>
             </li>
             <li onClick={() => handleNavClick('/pricing')}>
               <span style={{cursor: 'pointer'}}>Pricing</span>
