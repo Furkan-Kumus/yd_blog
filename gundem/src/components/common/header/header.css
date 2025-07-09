@@ -2,6 +2,8 @@
 .head {
   padding: 20px 0;
   color: #fff;
+  position: relative;
+  z-index: 10;
 }
 .logo h1 {
   font-size: 35px;
@@ -13,8 +15,13 @@
 /*--------head------------*/
 /*--------header------------*/
 header {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
   margin: 0 30px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 10;
 }
 header .nav {
   display: flex !important;
@@ -25,13 +32,18 @@ header li {
 header ul {
   padding: 30px 20px;
 }
-header ul li a {
+header ul li a,
+header ul li span {
   color: #fff;
-  font-weight: 500;
-  transition: 0.5s;
+  font-weight: 600;
+  transition: 0.3s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 16px;
 }
-header ul li a:hover {
+header ul li a:hover,
+header ul li span:hover {
   color: #1eb2a6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 .start {
   background-color: #1eb2a6;
@@ -49,14 +61,22 @@ header ul li a:hover {
   }
   header {
     margin: 0;
-    background-color: #1eb2a6;
+    background-color: rgba(0, 0, 0, 0.6);
     position: relative;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   header ul.flexSB {
     display: none;
   }
   header ul li {
     margin-bottom: 20px;
+  }
+  header ul li a,
+  header ul li span {
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
   .toggle {
     display: block;
@@ -66,12 +86,57 @@ header ul li a:hover {
     position: absolute;
     right: 0;
     top: -20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
   .mobile-nav {
     position: absolute;
     top: 7vh;
     left: 0;
     width: 100%;
-    background-color: #1eb2a6;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+/*--------calculator page------------*/
+.calculator-page header {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.calculator-page header ul li a,
+.calculator-page header ul li span {
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  font-size: 16px;
+}
+
+.calculator-page header ul li a:hover,
+.calculator-page header ul li span:hover {
+  color: #1eb2a6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Calculator page mobile için */
+@media screen and (max-width: 768px) {
+  .calculator-page header {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .calculator-page .mobile-nav {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  
+  .calculator-page header ul li a,
+  .calculator-page header ul li span {
+    color: #fff;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
   }
 }
