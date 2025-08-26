@@ -13,37 +13,37 @@ const ResponsiveMenu = ({ showMenu }) => {
         <div className="flex items-center justify-start gap-3">
           <FaUserCircle size={50} />
           <div>
-            <h1>Dilshad Ahmed</h1>
-            <h1 className="text-sm text-slate-500">Premium user</h1>
+            <h1>Gündem Yapı Denetim</h1>
+            <h1 className="text-sm text-slate-500">4708 Sayılı Kanun Kapsamında</h1>
           </div>
         </div>
         <nav className="mt-12">
           <ul className="space-y-4 text-xl">
             <li>
               <a href="#" className="mb-5 inline-block">
-                Home
+                Ana Sayfa
               </a>
             </li>
             <li>
               <a href="#" className="mb-5 inline-block">
-                Top Stories
+                Hizmetlerimiz
               </a>
             </li>
             <li>
               <a href="#" className="mb-5 inline-block">
-                Submit your story
+                Hakkımızda
               </a>
             </li>
             <li>
               <a href="#" className="mb-5 inline-block">
-                Contact
+                İletişim
               </a>
             </li>
           </ul>
         </nav>
       </div>
       <div className="footer">
-        <h1>© 2022 All Rights Reserved</h1>
+        <h1>© 2025 Tüm Hakları Saklıdır</h1>
       </div>
     </div>
   );

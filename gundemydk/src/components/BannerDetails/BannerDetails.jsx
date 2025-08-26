@@ -16,27 +16,26 @@ const BannerDetails = ({ reverse, img }) => {
               } `}
             >
               <h1 className="text-2xl md:text-4xl ">
-                We Build Apps That Get Trending On Appworld
+                Neden Gündem Yapı Denetim?
               </h1>
               <p className="text-sm text-slate-600 dark:text-slate-400">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi
-                ducimus eius quis ad enim aliquid iusto eum nihil exercitationem
-                necessitatibus?
+                20 yılı aşkın tecrübemiz ve uzman kadromuzla yapı denetim sektöründe
+                güvenilir çözüm ortağınız olarak yanınızdayız.
               </p>
               <div>
                 <ul className="flex list-inside list-disc flex-col gap-2  md:gap-4">
                   <li className="font-medium">
-                    Lorem ipsum adipisicing elit. Cum, vel.
+                    Uzman Mühendis ve Mimar Kadrosu
                   </li>
                   <li className="font-medium">
-                    dlss ipsum adipisicing elit. Cum, vel.
+                    Modern Laboratuvar Altyapısı
                   </li>
-                  <li className="font-medium">adipisicing elit. Cum, vel.</li>
+                  <li className="font-medium">7/24 Teknik Destek</li>
                 </ul>
               </div>
               <div className="space-x-4">
                 <button className="rounded-md border-2 border-primary bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary/80">
-                  Get Started
+                  Detaylı Bilgi
                 </button>
               </div>
             </div>

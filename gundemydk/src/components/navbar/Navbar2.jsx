@@ -37,8 +37,8 @@ const Navbar2 = () => {
         <nav className="container  flex h-[70px] items-center justify-between py-2 ">
           <div className="text-2xl text-white md:text-3xl ">
             <a href="/#home" className="">
-              COZ
-              <span className="inline-block font-bold text-primary">WEB</span>
+              GÜNDEM
+              <span className="inline-block font-bold text-primary">YAPI DENETİM</span>
             </a>
           </div>
           {/* Desktop Menu */}
@@ -49,16 +49,16 @@ const Navbar2 = () => {
                   href="/#home"
                   className="flex h-[72px] items-center gap-[2px]"
                 >
-                  Home{" "}
+                  Ana Sayfa{" "}
                   <span>
                     <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                   </span>
                 </a>
                 <div className="absolute -left-9 z-[9999] hidden w-[150px] rounded-md bg-white p-2 text-black group-hover:block  ">
                   <ul className="space-y-3">
-                    <li className="p-2 hover:bg-violet-200">Services</li>
-                    <li className="p-2 hover:bg-violet-200">About us</li>
-                    <li className="p-2 hover:bg-violet-200">Privacy policy</li>
+                    <li className="p-2 hover:bg-violet-200">Hizmetlerimiz</li>
+                    <li className="p-2 hover:bg-violet-200">Hakkımızda</li>
+                    <li className="p-2 hover:bg-violet-200">Belgelerimiz</li>
                   </ul>
                 </div>
               </li>
@@ -67,7 +67,7 @@ const Navbar2 = () => {
                   href="/#home"
                   className="flex h-[72px] items-center gap-[2px]"
                 >
-                  Services{" "}
+                  Hizmetlerimiz{" "}
                   <span>
                     <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                   </span>
@@ -77,51 +77,50 @@ const Navbar2 = () => {
                     <div className="d-200 overflow-hidden">
                       <img
                         className="max-h-[300px] w-full rounded-b-3xl object-fill"
-                        src="https://picsum.photos/200"
-                        alt="pics"
+                        src="/assets/building1.jpg"
+                        alt="Yapı Denetim"
                       />
                     </div>
                     <div className="col-span-2">
                       <h1 className="pb-3 text-xl font-semibold">
-                        Best Selling
+                        Yapı Denetim Hizmetlerimiz
                       </h1>
                       <p className="text-sm text-slate-600">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Aspernatur exercitationem delectus iusto animi
-                        aperiam deleniti reprehenderit doloribus, numquam
-                        corporis quae.
+                        4708 sayılı Yapı Denetimi Hakkında Kanun kapsamında, yapılarınızın proje ve yapım
+                        süreçlerinde kalite ve güvenliği sağlıyoruz. Uzman kadromuz ve modern laboratuvar
+                        altyapımız ile hizmetinizdeyiz.
                       </p>
                       <div className="grid grid-cols-3 ">
                         <ul className="mt-3 flex flex-col gap-2">
                           <h1 className="pb-1 text-xl font-semibold">
-                            Development
+                            Temel Hizmetler
                           </h1>
                           <li className="cursor-pointer text-black/80 hover:text-primary">
-                            Web development
+                            Yapı Denetimi
                           </li>
                           <li className="cursor-pointer text-black/80 hover:text-primary">
-                            IOS App Development
+                            Proje Kontrolleri
                           </li>
                           <li className="cursor-pointer text-black/80 hover:text-primary">
-                            App Development
+                            İş Güvenliği
                           </li>
                         </ul>
                         <ul className="mt-3 flex flex-col gap-2">
                           <h1 className="pb-1 text-xl font-semibold">
-                            Other Services
+                            Teknik Hizmetler
                           </h1>
                           <li className="cursor-pointer text-black/80 hover:text-primary">
-                            Cloud Services
+                            Zemin Etüdü
                           </li>
                           <li className="cursor-pointer text-black/80 hover:text-primary">
-                            Mobile App
+                            Malzeme Testleri
                           </li>
                           <li className="cursor-pointer text-black/80 hover:text-primary">
-                            App Development
+                            Kalite Kontrol
                           </li>
                         </ul>
                         <div>
-                          <img src="https://picsum.photos/180" alt="no image" />
+                          <img src="/assets/building2.jpg" alt="Yapı Denetim Hizmetleri" className="rounded-lg shadow-md" />
                         </div>
                       </div>
                     </div>
@@ -129,7 +128,7 @@ const Navbar2 = () => {
                 </div>
               </li>
               <li className="cursor pointer">
-                <a href="/#contact">About us</a>
+                <a href="/#contact">İletişim</a>
               </li>
               {/* Phone number section */}
               <div className="flex items-center gap-4">
@@ -138,10 +137,10 @@ const Navbar2 = () => {
                 </li>
                 <li>
                   <div>
-                    <p className="text-sm">Call us on</p>
+                    <p className="text-sm">Bize Ulaşın</p>
                     <p className="text-lg">
                       {" "}
-                      <a href="tel:+91123456789">+91 123456789</a>
+                      <a href="tel:+908501234567">0850 123 45 67</a>
                     </p>
                   </div>
                 </li>

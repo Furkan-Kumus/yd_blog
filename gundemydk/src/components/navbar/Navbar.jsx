@@ -57,14 +57,14 @@ const Navbar = () => {
     <header
       data-aos="fade"
       data-aos-duration="300"
-      className="relative z-20 border-b-[1px]  border-primary/50 bg-gradient-to-l from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
+      className="sticky top-0 z-20 w-full max-w-[100vw] overflow-x-hidden border-b-[1px] border-primary/50 bg-gradient-to-l from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
     >
-      <nav className="container  flex h-[70px] items-center justify-between py-2 ">
+      <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <div className="text-2xl text-white md:text-3xl ">
           <a href="/#home" className="">
-            COZ
+            GÜNDEM
             <span className="inline-block font-bold text-primary dark:text-black">
-              WEB
+              YAPI DENETİM
             </span>
           </a>
         </div>
@@ -72,22 +72,22 @@ const Navbar = () => {
           <ul className="flex items-center gap-10">
             <li className="cursor pointer group relative">
               <a href="/#home" className="flex h-[72px] items-center gap-[2px]">
-                Home{" "}
+                Ana Sayfa{" "}
                 <span>
                   <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                 </span>
               </a>
               <div className="absolute -left-9 z-[9999] hidden w-[150px] rounded-md bg-white p-2 text-black group-hover:block  ">
                 <ul className="space-y-3">
-                  <li className="p-2 hover:bg-violet-200">Services</li>
-                  <li className="p-2 hover:bg-violet-200">About us</li>
-                  <li className="p-2 hover:bg-violet-200">Privacy policy</li>
+                  <li className="p-2 hover:bg-violet-200">Kurumsal</li>
+                  <li className="p-2 hover:bg-violet-200">Hakkımızda</li>
+                  <li className="p-2 hover:bg-violet-200">Belgelerimiz</li>
                 </ul>
               </div>
             </li>
             <li className="cursor pointer group">
               <a href="/#home" className="flex h-[72px] items-center gap-[2px]">
-                Services{" "}
+                Hizmetlerimiz{" "}
                 <span>
                   <FaCaretDown className="transition-all duration-200 group-hover:rotate-180" />
                 </span>
@@ -97,48 +97,48 @@ const Navbar = () => {
                   <div className="overflow-hidden">
                     <img
                       className="max-h-[300px] w-full rounded-b-3xl object-fill"
-                      src="https://picsum.photos/200"
-                      alt="pics"
+                      src="/assets/building1.jpg"
+                      alt="Yapı Denetim"
                     />
                   </div>
                   <div className="col-span-2">
-                    <h1 className="pb-3 text-xl font-semibold">Best Selling</h1>
+                    <h1 className="pb-3 text-xl font-semibold">Yapı Denetim Hizmetlerimiz</h1>
                     <p className="text-sm text-slate-600">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Aspernatur exercitationem delectus iusto animi aperiam
-                      deleniti reprehenderit doloribus, numquam corporis quae.
+                      4708 sayılı Yapı Denetimi Hakkında Kanun kapsamında, yapılarınızın proje ve yapım
+                      süreçlerinde kalite ve güvenliği sağlıyoruz. Uzman kadromuz ve modern laboratuvar
+                      altyapımız ile hizmetinizdeyiz.
                     </p>
                     <div className="grid grid-cols-3 ">
                       <ul className="mt-3 flex flex-col gap-2">
                         <h1 className="pb-1 text-xl font-semibold">
-                          Development
+                          Temel Hizmetler
                         </h1>
                         <li className="cursor-pointer text-black/80 hover:text-primary">
-                          Web development
+                          Yapı Denetimi
                         </li>
                         <li className="cursor-pointer text-black/80 hover:text-primary">
-                          IOS App Development
+                          Proje Kontrolleri
                         </li>
                         <li className="cursor-pointer text-black/80 hover:text-primary">
-                          App Development
+                          İş Güvenliği
                         </li>
                       </ul>
                       <ul className="mt-3 flex flex-col gap-2">
                         <h1 className="pb-1 text-xl font-semibold">
-                          Other Services
+                          Teknik Hizmetler
                         </h1>
                         <li className="cursor-pointer text-black/80 hover:text-primary">
-                          Cloud Services
+                          Zemin Etüdü
                         </li>
                         <li className="cursor-pointer text-black/80 hover:text-primary">
-                          Mobile App
+                          Malzeme Testleri
                         </li>
                         <li className="cursor-pointer text-black/80 hover:text-primary">
-                          App Development
+                          Kalite Kontrol
                         </li>
                       </ul>
                       <div>
-                        <img src="https://picsum.photos/180" alt="no image" />
+                        <img src="/assets/building2.jpg" alt="Yapı Denetim Hizmeti" />
                       </div>
                     </div>
                   </div>
@@ -146,7 +146,7 @@ const Navbar = () => {
               </div>
             </li>
             <li className="cursor pointer">
-              <a href="/#contact">Contact</a>
+              <a href="/#contact">İletişim</a>
             </li>
             <div className="flex items-center gap-4">
               <li>
@@ -154,14 +154,14 @@ const Navbar = () => {
               </li>
               <li>
                 <div>
-                  <p className="text-sm">Call us on</p>
-                  <p className="text-lg">+91 123456789</p>
+                  <p className="text-sm">Bize Ulaşın</p>
+                  <p className="text-lg">0850 123 45 67</p>
                 </div>
               </li>
             </div>
 
-            <button onClick={() => handleThemeChange("dark")}> dark</button>
-            <button onClick={() => handleThemeChange("light")}> light</button>
+            <button onClick={() => handleThemeChange("dark")}> Koyu Tema</button>
+            <button onClick={() => handleThemeChange("light")}> Açık Tema</button>
             {/* <button onClick={() => handleThemeChange("dark")}> dark</button>
             <button onClick={() => handleThemeChange("light")}> light</button>
             <button onClick={() => handleThemeChange("system")}> system</button> */}
