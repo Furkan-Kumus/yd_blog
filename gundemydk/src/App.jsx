@@ -34,7 +34,7 @@ function App() {
         <Hero />
         <Service />
         <BannerDetails reverse={true} img={Banner1} />
-        <BannerDetails img={Banner2} />
+        <BannerDetails reverse={false} />
         <Banner />
         <Blogs />
         {/* <Swipe /> */}
